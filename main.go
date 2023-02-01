@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+	//TODO: create a solution for space separated emojis like :wine glass:
 	app := &cli.App{
 		Name:  "emojiterm",
 		Usage: "convert text to emojis and output them on stdout",
