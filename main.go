@@ -10,17 +10,14 @@ import (
 )
 
 func main() {
-	//TODO: create a solution for space separated emojis like :wine glass:
 	app := &cli.App{
-		Name:  "emojiterm",
-		Usage: "convert text to emojis and output them on stdout",
+		Name:  "emojiterm - text to emoji converter - Use underscore instead of space in emoji names",
+		Usage: "emojiterm \"<space separeted list of tokens>\" | Example: emojiterm \"sun wine_glass beer)\"\nNames are based on this file: https://raw.githubusercontent.com/iamcal/emoji-data/master/emoji.json",
 		Action: func(cCtx *cli.Context) error {
 			var s string
 			for _, arg := range cCtx.Args().Slice() {
 				s = s + emoji.Sprintf(" :%s:", arg)
 			}
-			//emoji.Println(fmt.Sprintf(":%s:", cCtx.Args().Slice()[]))
-			//fmt.Printf("Hello %s\n", cCtx.Args().Get(0))
 			fmt.Println(s)
 			return nil
 		},
