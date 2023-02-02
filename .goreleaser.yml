@@ -5,7 +5,7 @@ before:
     - go mod tidy
     - go generate ./...
 builds:
-  - binary: aws-parameter-bulk
+  - binary: emojiterm
     env:
       - CGO_ENABLED=0
     goos:
@@ -40,7 +40,6 @@ archives:
     files:
       - LICENSE
       - README.md
-      - ui/*
 checksum:
   name_template: 'checksums.txt'
 snapshot:
@@ -60,7 +59,7 @@ brews:
     name: emojiterm
     homepage: "https://github.com/wunderkind2k1/emojiterm"
     tap:
-      owner: gork74
+      owner: wunderkind2k1
       name: homebrew-wunderkind2k1
     commit_author:
       name: Sven Hohlfeld
