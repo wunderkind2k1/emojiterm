@@ -60,7 +60,7 @@ brews:
     homepage: "https://github.com/wunderkind2k1/emojiterm"
     tap:
       owner: wunderkind2k1
-      name: homebrew-wunderkind2k1
+      name: emojiterm-wunderkind2k1
     commit_author:
       name: Sven Hohlfeld
       email: sho1975@gmail.com
