@@ -51,4 +51,4 @@ jobs:
           version: ${{ env.GITHUB_REF_NAME }}
           args: release --rm-dist
         env:
-          GITHUB_TOKEN: ${{ secrets.goreleaser-token-emojiterm }}
+          GITHUB_TOKEN: ${{ secrets.EMOJITERM_PUBLISH_TOKEN }}
