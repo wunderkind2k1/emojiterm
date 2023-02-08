@@ -4,6 +4,23 @@ A simple cli tool that encodes words into emojis and echos them to the terminal.
 ![using emojiterm](vhs/emojiterm-running.gif)
 
 
+## Installation
+
+### With homebrew
+
+```shell
+brew tap wunderkind2k1/tap
+brew install emojiterm
+```
+
+![installing emojiterm](vhs/emojiterm-installation.gif)
+
+### Go standard: Through _go install_
+
+```shell
+go install github.com/wunderkind2k1/emojiterm@latest
+```
+
 ## Usage
 
 ```shell
