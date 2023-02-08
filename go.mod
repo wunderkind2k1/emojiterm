@@ -1,4 +1,4 @@
-module emojiterm
+module github.com/wunderkind2k1/emojiterm
 
 go 1.19
 
