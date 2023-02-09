@@ -27,7 +27,7 @@ Sleep 1s
 Type "emojiterm beer tropical_drink cup_with_straw"
 Enter
 Sleep 500ms
-Type "emojiterm beer sushi bento | pbcopy"
+Type "emojiterm -c beer sushi bento"
 Enter
 Sleep 200ms
 Type "Now paste your emojis everywhere"

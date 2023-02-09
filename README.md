@@ -30,8 +30,8 @@ go install github.com/wunderkind2k1/emojiterm@latest
 
 or 
 ```shell
-# on mac to copy into clipboard
-./emojiterm beer sushi bento | pbcopy
+# to copy into clipboard
+./emojiterm -c beer sushi bento
 ```
 
 or try to help yourself
@@ -48,5 +48,6 @@ COMMANDS:
    help, h  Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
+   --clipboard, -c  write emojis to clipboard
    --help, -h  show help
 ```
