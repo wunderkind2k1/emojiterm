@@ -24,15 +24,24 @@ go install github.com/wunderkind2k1/emojiterm@latest
 ## Usage
 
 ```shell
-./emojiterm beer sushi bento
+emojiterm beer sushi bento
  🍺  🍣  🍱
 ```
 
-or 
+__or (since v.0.0.2)__
 ```shell
-# to copy into clipboard
-./emojiterm -c beer sushi bento
+# to copy into clipboard. Needs pbcopy or xclip installed though
+emojiterm -c beer sushi bento
 ```
+
+Of course pipes are going to work like before
+```shell
+# use pipes and don't eat sushi - note: -c is optional
+emojiterm -c beer bento sushi | cut -c 1,4
+> 🍺🍱
+# your clipboard still has the sushi
+```
+
 
 or try to help yourself
 ```shell
