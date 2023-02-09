@@ -15,12 +15,13 @@ func main() {
 	useClipboard := false
 
 	app := &cli.App{
-		Name:  "emojiterm - text to emoji converter - Use underscore instead of space in emoji names",
-		Usage: "emojiterm \"<space separeted list of tokens>\" | Example: emojiterm \"sun wine_glass beer)\"\nNames are based on this file: https://raw.githubusercontent.com/iamcal/emoji-data/master/emoji.json",
+		Name:    "emojiterm - text to emoji converter - Use underscore instead of space in emoji names",
+		Usage:   "emojiterm \"<space separeted list of tokens>\" | Example: emojiterm \"sun wine_glass beer)\"\nNames are based on this file: https://raw.githubusercontent.com/iamcal/emoji-data/master/emoji.json",
 		Flags: []cli.Flag{
 			&cli.BoolFlag{
-				Name:               "c",
-				Usage:              "write emojis to clipbaord",
+				Name:               "clipboard",
+				Aliases:            []string{"c"},
+				Usage:              "write emojis to clipboard",
 				DisableDefaultText: true,
 				Action: func(cCtx *cli.Context, b bool) error {
 					useClipboard = b
