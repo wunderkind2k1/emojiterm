@@ -3,6 +3,7 @@ module github.com/wunderkind2k1/emojiterm
 go 1.19
 
 require (
+	github.com/atotto/clipboard v0.1.4
 	github.com/kyokomi/emoji/v2 v2.2.11
 	github.com/urfave/cli/v2 v2.24.2
 )

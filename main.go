@@ -5,17 +5,41 @@ import (
 	"log"
 	"os"
 
+	"github.com/atotto/clipboard"
 	"github.com/kyokomi/emoji/v2"
 	"github.com/urfave/cli/v2"
 )
 
 func main() {
+	useClipboard := false
+
 	app := &cli.App{
-		Name:  "emojiterm - text to emoji converter - Use underscore instead of space in emoji names",
-		Usage: "emojiterm \"<space separeted list of tokens>\" | Example: emojiterm \"sun wine_glass beer)\"\nNames are based on this file: https://raw.githubusercontent.com/iamcal/emoji-data/master/emoji.json",
+		Name: "emojiterm - text to emoji converter - Use underscore instead of space in emoji names",
+		Usage: "emojiterm \"<space separeted list of tokens>\" | Example: emojiterm \"sun wine_glass beer)\"\n" +
+			"Names are based on this file: https://raw.githubusercontent.com/iamcal/emoji-data/master/emoji.json",
+		Flags: []cli.Flag{
+			&cli.BoolFlag{
+				Name:               "clipboard",
+				Aliases:            []string{"c"},
+				Usage:              "write emojis to clipboard",
+				DisableDefaultText: true,
+				Action: func(cCtx *cli.Context, b bool) error {
+					useClipboard = b
+
+					return nil
+				},
+			},
+		},
 		Action: func(cCtx *cli.Context) error {
 			s := printEmojiArgsAsString(cCtx.Args().Slice())
 			fmt.Println(s)
+
+			if useClipboard {
+				if err := clipboard.WriteAll(s); err != nil {
+					fmt.Printf("Clipboard not supported: %v\n", err)
+				}
+			}
+
 			return nil
 		},
 	}
@@ -26,13 +50,15 @@ func main() {
 }
 
 func printEmojiArgsAsString(args []string) string {
-	s := ""
+	emojisAsString := ""
+
 	for index, arg := range args {
 		if index == 0 {
-			s = s + emoji.Sprintf(":%s:", arg)
+			emojisAsString += emoji.Sprintf(":%s:", arg)
 		} else {
-			s = s + emoji.Sprintf(" :%s:", arg)
+			emojisAsString += emoji.Sprintf(" :%s:", arg)
 		}
 	}
-	return s
+
+	return emojisAsString
 }
